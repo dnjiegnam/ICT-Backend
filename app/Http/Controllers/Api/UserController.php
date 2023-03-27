@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
@@ -18,13 +19,14 @@ class UserController extends Controller
         return response(User::with('roles')->get(), 200);
     }
 
+
     
     /**
      * Display a listing of the resource.
      */
     public function getStudents()
     {
-        return response(User::with('notes')->get(), 200);
+        return response(User::with('notes')->where('role_id', 3)->get(), 200);
     }
 
     /**

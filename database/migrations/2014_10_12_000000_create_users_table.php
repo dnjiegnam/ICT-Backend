@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('matricule')->nullable();
+            $table->string('matricule')->unique()->nullable();
             $table->boolean('satus')->default(false);
             $table->rememberToken();
             $table->timestamps();
